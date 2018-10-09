@@ -10,6 +10,10 @@ void some_function(Enemy& enemy) {
 	enemy.set_score(6);
 }
 
+void hitEnemy(Enemy& enemy) {
+	enemy.set_hit_points(enemy.get_hit_points() - 1);
+}
+
 int main(void) {
 
 	ArmedEnemy* ae = new ArmedEnemy(2, 5);
@@ -20,18 +24,36 @@ int main(void) {
 
 	some_function(*ae);
 
-	Boss* boss = new Boss(600, 50, 100);
+	Boss boss(600, 50, 100);
+	ArmedEnemy ae1(100, 20);
+	ArmedEnemy ae2(90, 20);
+	ArmedEnemy ae3(80, 20);
+	ArmedEnemy ae4(70, 20);
+	ArmedEnemy ae5(60, 20);
+	ArmedEnemy ae6(50, 20);
+	ArmedEnemy ae7(40, 20);
+	ArmedEnemy ae8(30, 20);
+	ArmedEnemy ae9(20, 20);
+	ArmedEnemy ae10(10, 20);
 
-	cout << "Boss stats > Health: " << boss->get_hit_points() << "  Armor: " << boss->getArmor() << "\n";
-	cout << "You hit the boss for massive damage\n";
-	cout << "He's lost a piece of armor\n";
-	boss->set_hit_points(250);
-	boss->setArmor(60);
+	Enemy enemies[11] = { boss, ae1, ae2, ae3, ae4, ae5, ae6, ae7, ae8, ae9, ae10 };
 
-	cout << "Boss stats > Health: " << boss->get_hit_points() << "  Armor: " << boss->getArmor() << "\n";
+	cout << "all mobs hp:\n";
+
+	for (int i = 0; i < 11; i++)
+	{
+		cout << enemies[i].get_hit_points() << "\n";
+		hitEnemy(enemies[i]);
+	}
+
+	cout << "all mobs hp after get hit:\n";
+
+	for (int i = 0; i < 11; i++)
+	{
+		cout << enemies[i].get_hit_points() << "\n";
+	}
 
 	delete ae;
-	delete boss;
 	ae = NULL;
 
 	int x;
