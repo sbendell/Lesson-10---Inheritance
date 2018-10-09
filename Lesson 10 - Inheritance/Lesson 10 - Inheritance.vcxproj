@@ -139,12 +139,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArmedEnemy.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArmedEnemy.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Lesson 10 - Inheritance.cpp" />
     <ClCompile Include="stdafx.cpp">
