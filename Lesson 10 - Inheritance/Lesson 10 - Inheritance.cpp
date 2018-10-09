@@ -2,6 +2,9 @@
 //
 
 #include "stdafx.h"
+#include "Boss.h"
+
+using namespace std;
 
 void some_function(Enemy& enemy) {
 	enemy.set_score(6);
@@ -17,8 +20,22 @@ int main(void) {
 
 	some_function(*ae);
 
+	Boss* boss = new Boss(600, 50, 100);
+
+	cout << "Boss stats > Health: " << boss->get_hit_points() << "  Armor: " << boss->getArmor() << "\n";
+	cout << "You hit the boss for massive damage\n";
+	cout << "He's lost a piece of armor\n";
+	boss->set_hit_points(250);
+	boss->setArmor(60);
+
+	cout << "Boss stats > Health: " << boss->get_hit_points() << "  Armor: " << boss->getArmor() << "\n";
+
 	delete ae;
+	delete boss;
 	ae = NULL;
+
+	int x;
+	cin >> x;
 	return 0;
 }
 

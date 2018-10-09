@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "ArmedEnemy.h"
 
+using namespace std;
+
 ArmedEnemy::ArmedEnemy(int hps, int ammo) :
 	Enemy(hps),
 	ammo_level(ammo) {
