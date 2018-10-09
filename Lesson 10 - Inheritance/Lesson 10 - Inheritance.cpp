@@ -53,6 +53,10 @@ int main(void) {
 		cout << enemies[i].get_hit_points() << "\n";
 	}
 
+	cout << "Comparing 2 enemies:\nFirst HP: " << enemies[4].get_hit_points() << "\n";
+	cout << "First HP: " << enemies[5].get_hit_points() << "\n";
+	cout << enemies[4].compare_to(enemies[5]);
+
 	delete ae;
 	ae = NULL;
 

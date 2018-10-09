@@ -1,8 +1,9 @@
 #pragma once
+#include "Comparable.h"
 #include <iostream>
 
 struct node {
-	int value;
+	Comparable* value;
 	struct node* left;
 	struct node* right;
 };
@@ -10,7 +11,7 @@ struct node {
 class BinaryTree
 {
 public:
-	BinaryTree(int* numbers, int size);
+	BinaryTree(Comparable* comparable);
 	~BinaryTree();
 	node* get_primary_node();
 	void insert_integer(struct node* tree, int value);

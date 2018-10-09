@@ -150,6 +150,7 @@
     <ClCompile Include="ArmedEnemy.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Comparable.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Lesson 10 - Inheritance.cpp" />
     <ClCompile Include="stdafx.cpp">

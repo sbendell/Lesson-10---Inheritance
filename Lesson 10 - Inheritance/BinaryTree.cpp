@@ -3,17 +3,12 @@
 
 using namespace std;
 
-BinaryTree::BinaryTree(int* numbers, int size)
+BinaryTree::BinaryTree(Comparable* comparable)
 {
 	primaryNode = new node();
-	primaryNode->value = numbers[0];
+	primaryNode->value = comparable;
 	primaryNode->left = NULL;
 	primaryNode->right = NULL;
-
-	for (int i = 1; i < size; i++)
-	{
-		insert_integer(primaryNode, numbers[i]);
-	}
 }
 
 node* BinaryTree::get_primary_node() {

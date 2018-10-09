@@ -13,7 +13,7 @@ public:
 	/** returns 1 if this class is greater than rhs , 0 if equal
 	* and ( -1) if this class is less than rhs .
 	*/
-	virtual int compare_to(Comparable& rhs) const;
+	virtual int compare_to(Comparable& rhs);
 protected:
 	int hit_points;
 	int* score;

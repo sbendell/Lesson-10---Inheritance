@@ -26,16 +26,16 @@ void Enemy::set_score(const int new_score) {
 	*score = new_score;
 }
 
-int Enemy::compare_to(Comparable& rhs) const {
+int Enemy::compare_to(Comparable& rhs) {
 	Enemy* enemy = dynamic_cast<Enemy*>(&rhs);
 	
-	if (enemy->get_hit_points() > get_hit_points()) {
+	if (enemy->get_hit_points() < get_hit_points()) {
 		return 1;
 	}
 	else if (enemy->get_hit_points() == get_hit_points()) {
 		return 0;
 	}
-	else if(enemy->get_hit_points() < get_hit_points()) {
+	else if(enemy->get_hit_points() > get_hit_points()) {
 		return -1;
 	}
 }
