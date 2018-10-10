@@ -60,17 +60,17 @@ int main(void) {
 
 	cout << "\n\nBinary Tree: \n";
 
-	BinaryTree tree(&ae5);
-	tree.insert_integer(tree.get_primary_node(), &ae3);
-	tree.insert_integer(tree.get_primary_node(), &ae1);
-	tree.insert_integer(tree.get_primary_node(), &ae2);
-	tree.insert_integer(tree.get_primary_node(), &ae4);
-	tree.insert_integer(tree.get_primary_node(), &boss);
-	tree.insert_integer(tree.get_primary_node(), &ae7);
-	tree.insert_integer(tree.get_primary_node(), &ae9);
-	tree.insert_integer(tree.get_primary_node(), &ae8);
-	tree.insert_integer(tree.get_primary_node(), &ae10);
-	tree.insert_integer(tree.get_primary_node(), &ae6);
+	BinaryTree tree(&enemies[5]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[3]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[1]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[2]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[4]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[0]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[7]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[9]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[8]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[10]);
+	tree.insert_integer(tree.get_primary_node(), &enemies[6]);
 
 	tree.print_tree(tree.get_primary_node());
 

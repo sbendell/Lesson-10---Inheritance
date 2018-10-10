@@ -13,3 +13,7 @@ int Comparable::compare_to(Comparable & rhs)
 {
 	return 0;
 }
+
+void Comparable::Print() {
+
+}
