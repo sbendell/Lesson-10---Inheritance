@@ -15,6 +15,8 @@ public:
 	*/
 	virtual int compare_to(Comparable& rhs);
 	virtual void Print();
+	Enemy* bestFriend;
+	void setFriendHealth(int value);
 protected:
 	int hit_points;
 	int* score;
