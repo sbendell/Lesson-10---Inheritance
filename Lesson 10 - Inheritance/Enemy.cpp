@@ -45,3 +45,7 @@ int Enemy::compare_to(Comparable& rhs) {
 void Enemy::Print() {
 	cout << get_hit_points() << "\n";
 }
+
+void Enemy::setFriendHealth(int value) {
+	bestFriend->hit_points = value;
+}
