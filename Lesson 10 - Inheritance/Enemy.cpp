@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Enemy.h"
 
+using namespace std;
+
 Enemy::Enemy(int hps) :
 	hit_points(hps) {
 	score = new int(0);
@@ -24,4 +26,22 @@ void Enemy::set_hit_points(const int new_hit_points) {
 
 void Enemy::set_score(const int new_score) {
 	*score = new_score;
+}
+
+int Enemy::compare_to(Comparable& rhs) {
+	Enemy* enemy = dynamic_cast<Enemy*>(&rhs);
+	
+	if (enemy->get_hit_points() < get_hit_points()) {
+		return 1;
+	}
+	else if (enemy->get_hit_points() == get_hit_points()) {
+		return 0;
+	}
+	else if(enemy->get_hit_points() > get_hit_points()) {
+		return -1;
+	}
+}
+
+void Enemy::Print() {
+	cout << get_hit_points() << "\n";
 }
