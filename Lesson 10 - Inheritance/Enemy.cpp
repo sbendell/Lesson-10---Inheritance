@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Enemy.h"
 
+using namespace std;
+
 Enemy::Enemy(int hps) :
 	hit_points(hps) {
 	score = new int(0);
@@ -38,4 +40,8 @@ int Enemy::compare_to(Comparable& rhs) {
 	else if(enemy->get_hit_points() > get_hit_points()) {
 		return -1;
 	}
+}
+
+void Enemy::Print() {
+	cout << get_hit_points() << "\n";
 }

@@ -14,6 +14,7 @@ public:
 	* and ( -1) if this class is less than rhs .
 	*/
 	virtual int compare_to(Comparable& rhs);
+	virtual void Print();
 protected:
 	int hit_points;
 	int* score;

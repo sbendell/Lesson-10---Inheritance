@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Boss.h"
+#include "BinaryTree.h"
 
 using namespace std;
 
@@ -55,7 +56,23 @@ int main(void) {
 
 	cout << "Comparing 2 enemies:\nFirst HP: " << enemies[4].get_hit_points() << "\n";
 	cout << "First HP: " << enemies[5].get_hit_points() << "\n";
-	cout << enemies[4].compare_to(enemies[5]);
+	cout << enemies[4].compare_to(enemies[5]) << "\n";
+
+	cout << "\n\nBinary Tree: \n";
+
+	BinaryTree tree(&ae5);
+	tree.insert_integer(tree.get_primary_node(), &ae3);
+	tree.insert_integer(tree.get_primary_node(), &ae1);
+	tree.insert_integer(tree.get_primary_node(), &ae2);
+	tree.insert_integer(tree.get_primary_node(), &ae4);
+	tree.insert_integer(tree.get_primary_node(), &boss);
+	tree.insert_integer(tree.get_primary_node(), &ae7);
+	tree.insert_integer(tree.get_primary_node(), &ae9);
+	tree.insert_integer(tree.get_primary_node(), &ae8);
+	tree.insert_integer(tree.get_primary_node(), &ae10);
+	tree.insert_integer(tree.get_primary_node(), &ae6);
+
+	tree.print_tree(tree.get_primary_node());
 
 	delete ae;
 	ae = NULL;

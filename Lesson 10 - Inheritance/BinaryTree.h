@@ -14,10 +14,10 @@ public:
 	BinaryTree(Comparable* comparable);
 	~BinaryTree();
 	node* get_primary_node();
-	void insert_integer(struct node* tree, int value);
+	void insert_integer(struct node* tree, Comparable* value);
 	void print_tree(struct node* tree);
 	void terminate_tree(struct node* tree);
-	bool Search(struct node* leaf, int value) const;
+	bool Search(struct node* leaf, Comparable* value) const;
 private:
 	node* primaryNode;
 };

@@ -15,8 +15,9 @@ node* BinaryTree::get_primary_node() {
 	return primaryNode;
 }
 
-void BinaryTree::insert_integer(struct node* leaf, int value) {
-	if (value < leaf->value) {
+void BinaryTree::insert_integer(struct node* leaf, Comparable* value) {
+	switch(value->compare_to(*leaf->value)) {
+	case -1:
 		if (leaf->left == NULL) {
 			leaf->left = new node();
 			leaf->left->value = value;
@@ -26,8 +27,8 @@ void BinaryTree::insert_integer(struct node* leaf, int value) {
 		else {
 			insert_integer(leaf->left, value);
 		}
-	}
-	else {
+		break;
+	case 0:
 		if (leaf->right == NULL) {
 			leaf->right = new node();
 			leaf->right->value = value;
@@ -37,6 +38,18 @@ void BinaryTree::insert_integer(struct node* leaf, int value) {
 		else {
 			insert_integer(leaf->right, value);
 		}
+		break;
+	case 1:
+		if (leaf->right == NULL) {
+			leaf->right = new node();
+			leaf->right->value = value;
+			leaf->right->left = NULL;
+			leaf->right->right = NULL;
+		}
+		else {
+			insert_integer(leaf->right, value);
+		}
+		break;
 	}
 }
 
@@ -44,7 +57,7 @@ void BinaryTree::print_tree(struct node* leaf) {
 	if (leaf->left != NULL)
 		print_tree(leaf->left);
 
-	cout << leaf->value << "\n";
+	leaf->value->Print();
 
 	if (leaf->right != NULL)
 		print_tree(leaf->right);
@@ -59,7 +72,7 @@ void BinaryTree::terminate_tree(struct node* leaf) {
 	}
 }
 
-bool BinaryTree::Search(struct node* leaf, int value) const {
+bool BinaryTree::Search(struct node* leaf, Comparable* value) const {
 	if (leaf != NULL) {
 		if (value == leaf->value) {
 			return true;
